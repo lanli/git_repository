@@ -10,9 +10,26 @@
 
 @implementation IVBrickerViewController
 
+//@add
+@synthesize scoreLabel;
+
 - (void)dealloc
 {
+    //@add
+    [scoreLabel release];
+    
     [super dealloc];
+    
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+    
+    //@add
+    self.scoreLabel = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -25,20 +42,17 @@
 
 #pragma mark - View lifecycle
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //@add
+    //score = 7.0;
+    scoreLabel.text = [NSString stringWithFormat:@"%5d", score];
 }
-*/
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

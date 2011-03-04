@@ -9,7 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface IVBrickerViewController : UIViewController {
+    //@add
+    UILabel *scoreLabel;
+    int score;
     
 }
+
+//@add
+@property (nonatomic, retain) IBOutlet UILabel *scoreLabel;
+
 
 @end
