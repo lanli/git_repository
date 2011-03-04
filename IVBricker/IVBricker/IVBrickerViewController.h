@@ -9,14 +9,24 @@
 #import <UIKit/UIKit.h>
 
 @interface IVBrickerViewController : UIViewController {
+//@interface IVBrickerViewController : UIViewController <UIAccelerometerDelegate> {
     //@add
-    UILabel *scoreLabel;
     int score;
+    float touchOffset;
+    UILabel *scoreLabel;
+    UIImageView *ball;
+    UIImageView *paddle;
+    CGPoint ballMovement;
     
+
 }
 
 //@add
 @property (nonatomic, retain) IBOutlet UILabel *scoreLabel;
+@property (nonatomic, retain) IBOutlet UIImageView *ball;
+@property (nonatomic, retain) IBOutlet UIImageView *paddle;
 
+- (void)initializeTimer;
+- (void)animateBall:(NSTimer *) theTimer;
 
 @end
